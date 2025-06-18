@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    
+    <link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-wrapper {
+            margin-top: 80px; /* Space for fixed nav */
+            width: 100%;
+            padding: 20px;
+        }
+
+        @media (max-width: 770px) {
+            .row {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1LJTL3S3Ag5RE7mBqt48BbVSWJ7RHvHd7DmjKZ5gTJmsdnA2l"
+                    alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Senderismo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./perfil.html">
+                            <img src="./img/perfil.png" alt="perfil" width="40" height="30"
+                                class="d-inline-block align-text-top">
+                            Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./acceso.html" style="color: gray;">Log
+                            Out</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                </form>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" id="btnBuscar" type="submit"> Buscar </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-wrapper container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 mb-4 order-2 order-lg-1">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <!--Coso desplegable (dropdown) para ponerle filtro al contenido que sale en el inicio. Por ejemplo, que te salgan rutas rocosas, largas, ...-->
+                        <select class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <option value="filtro">Filtro</option>
+                            <option value="lagos">Lagos</option>
+                            <option value="rocosas">Rocosas</option>
+                            <option value="praderas">Praderas</option>
+                            <option value="cortas">Cortas</option>
+                            <option value="largas">Largas</option>
+                        </select>
+
+                        <br>
+                        <!--Salto de línea para que no se ponga justo debajo del filtro la imagen y haya una separación-->
+                        <img src="./img/Rutas.jpg" width="410px" height="410px">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4 order-1 order-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="wrapperPerfiles"> <!--Apartado de perfiles donde te aparecen los seguidos y los recomendados-->
+                            <h4><b>Perfiles</b> <!--Negrita--></h4>
+                            <h6><a style="color: blueviolet;">Seguidos</a></h6>
+                            <a> <!--Imagenes de perfiles-->
+                              <img src="./img/perfil.png" width="50" height="40">
+                    
+                              <img src="./img/perfil.png" width="50" height="40">
+                           
+                              <img src="./img/perfil.png" width="50" height="40">
+                 
+                              <img src="./img/perfil.png" width="50" height="40">
+                     
+                              <img src="./img/perfil.png" width="50" height="40">
+                        
+                              <br>
+                              Manolo &nbsp; Julio &nbsp; Josefa &nbsp; Mauricio &nbsp; Angustias
+                            </a>
+                            <br>
+                            <br>
+                            <h6><a style="color: blueviolet;">Sugeridos</a></h6>
+                            <a>
+                              <img src="./img/perfil.png" width="50" height="40">
+
+                              <img src="./img/perfil.png" width="50" height="40">
+                              
+                              <img src="./img/perfil.png" width="50" height="40">
+                          
+                              <img src="./img/perfil.png" width="50" height="40">
+                       
+                              <img src="./img/perfil.png" width="50" height="40">
+                        
+                              <br>
+                              Felipe &nbsp; Rodolfo &nbsp; Dolores &nbsp; Eustaquio &nbsp; Luis
+                            </a>
+                        
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

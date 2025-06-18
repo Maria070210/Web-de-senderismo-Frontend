@@ -1,0 +1,267 @@
+/* Estilos de administrador_main */
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    min-height: 100vh;
+}
+.sidebar h4 {
+    margin-bottom: 30px;
+}
+.sidebar .btn {
+    margin-bottom: 10px;
+}
+.feed-container {
+    background-color: #ffffff;
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+.feed-header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    z-index: 1;
+}
+.messages-container {
+    background-color: #ffffff;
+    border-left: 1px solid #dee2e6;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+.messages-container h4 {
+    margin-bottom: 20px;
+}
+.contact-list .list-group-item {
+    cursor: pointer;
+}
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-messages {
+    overflow-y: auto;
+    max-height: calc(100vh - 240px);
+    margin-bottom: 15px;
+}
+.message {
+    margin-bottom: 15px;
+}
+.message.sent {
+    text-align: right;
+}
+/* Ajuste del scroll en las columnas */
+.scrollable {
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
+}
+/* Estilos para las tarjetas de publicaciones */
+.card {
+    margin-bottom: 20px;
+}
+.card img {
+    max-height: 300px;
+    object-fit: cover;
+}
+/* Estilos para los comentarios */
+.comments-section {
+    display: none;
+    margin-top: 15px;
+}
+.comment {
+    margin-bottom: 10px;
+}
+.comment .comment-author {
+    font-weight: bold;
+}
+
+/* Estilso de REPORTES */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.sidebar_reporte {
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content_reporte {
+    padding: 20px;
+}
+
+.report-status_reporte {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.report-status_reporte.abiertos {
+    background-color: #ffdddd;
+}
+
+.report-status_reporte.disputados {
+    background-color: #fff5cc;
+}
+
+.report-status_reporte.cerrados {
+    background-color: #e6ffe6;
+}
+
+.report-card_reporte {
+    cursor: pointer;
+}
+
+.report-card_reporte:hover {
+    background-color: #f0f0f0;
+}
+
+.message-box_reporte {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.message_reporte {
+    margin-bottom: 10px;
+}
+
+.message_reporte.sent {
+    text-align: right;
+}
+
+.message_reporte .message-content_reporte {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.message_reporte.sent .message-content_reporte {
+    background-color: #d1e7dd;
+}
+
+.message_reporte.received .message-content_reporte {
+    background-color: #f8d7da;
+}
+
+.scrollable_reporte {
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.post-image_reporte {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.post-details_reporte h5 {
+    margin-top: 20px;
+}
+
+.details-container_reporte {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.report-details_reporte,
+.post-details_reporte {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.report-details_reporte {
+    border-right: 1px solid #dee2e6;
+}
+
+@media (max-width: 768px) {
+    .details-container_reporte {
+        flex-direction: column;
+    }
+    .report-details_reporte {
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+}
+
+
+/* Estilos administrador_usuarios.html */
+body {
+    background-color: #f8f9fa;
+}
+.sidebar_usuarios {
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    min-height: 100vh;
+    padding: 20px;
+}
+.content_usuarios {
+    padding: 20px;
+}
+.user-list_usuarios {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.user-details_usuarios {
+    display: none;
+}
+.user-details_usuarios.active {
+    display: block;
+}
+.profile-picture_usuarios {
+    max-width: 150px;
+    border-radius: 50%;
+}
+.search-container_usuarios {
+    position: relative;
+    margin-bottom: 20px;
+}
+/* Estilos para la lista de usuarios */
+.user-list-item_usuarios {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+.user-list-item_usuarios:hover {
+    background-color: #f0f0f0;
+}
+/* Estilos para tabs en detalles del usuario */
+.nav-tabs .nav-link {
+    margin-right: 5px;
+}
+.tab-content_usuarios {
+    margin-top: 20px;
+}
+
+
+
+/* Estilos administrador_configuracion.html */
+.container_config {
+    padding-top: 50px;
+}
+.card_config {
+    margin-bottom: 20px;
+}
+.section-title_config {
+    margin: 40px 0 20px;
+}
+.btn-custom_config {
+    width: 100%;
+    text-align: left;
+}
+.table-responsive_config {
+    max-height: 300px;
+}
+

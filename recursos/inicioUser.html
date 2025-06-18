@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio</title>
+<!--<link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">-->
+<link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">
+<link rel="stylesheet" href="./css/estilos.css">
+<link rel="shortcut icon" href="./img/logo.ico">
+
+<body>
+  <!--Como sabemos de la teoría el nav es parte del body asi que lo opngo aqui debajo un poco destacado al inicio-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!--Este es el nav, es la barrita que hay en la parte de arriba del todo donde te sale el buscador, el log out, el logo,...-->
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <!--Esta es la sección del nav donde pongo el logo y el nombre de la página a la izquierda-->
+        <img
+          src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1LJTL3S3Ag5RE7mBqt48BbVSWJ7RHvHd7DmjKZ5gTJmsdnA2l"
+          alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        Senderismo
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./perfil.html">
+              <!--Este es la parte donde pongo el botón de ir al perfil de usuario en el nav-->
+              <img src="./img/perfil.png" alt="perfil" width="40" height="30" class="d-inline-block align-text-top">
+              Perfil
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <!--Aqui es donde pongo el botón de log out en el nav para salir de la aplicación y "cerrar sesión" del usuario-->
+            <a class="nav-link active" aria-current="page" href="./acceso.html" style="color: gray;">Log Out</a>
+          </li>
+        </ul>
+
+        <!--Boton de Buscar-->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <!--Este coso es el cuadradito para poner lo que quieres buscar-->
+          <a>&nbsp;</a>
+        </form>
+        <form class="d-flex" role="search">
+          <button class="btn" id="btnBuscar" type="submit"> Buscar </button>
+          <!--Y este es el botón para darle a buscar lo que has escrito-->
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <a>&nbsp;</a>
+  <!--Tabulación para que no salga el wrapper justo debajo del nav, que haya un cierto espacio entre el wrapper y el nav-->
+  <div class="wrapperRutas">
+    <!--Coso desplegable (dropdown) para ponerle filtro al contenido que sale en el inicio. Por ejemplo, que te salgan rutas rocosas, largas, ...-->
+    <select class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <option value="filtro">Filtro</option>
+      <option value="lagos">Lagos</option>
+      <option value="rocosas">Rocosas</option>
+      <option value="praderas">Praderas</option>
+      <option value="cortas">Cortas</option>
+      <option value="largas">Largas</option>
+    </select>
+
+    <br> <!--Salto de línea para que no se ponga justo debajo del filtro la imagen y haya una separación-->
+    <img src="./img/Rutas.jpg" width="410px" height="410px">
+  </div>
+
+  <div class="wrapperPerfiles"> <!--Apartado de perfiles donde te aparecen los seguidos y los recomendados-->
+    <h4><b>Perfiles</b> <!--Negrita--></h4>
+    <h6><a style="color: blueviolet;">Seguidos</a></h6>
+    <a> <!--Imagenes de perfiles-->
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+
+      <br>
+      Manolo &nbsp; Julio &nbsp; Josefa &nbsp; Mauricio &nbsp; Angustias
+    </a>
+    <br>
+    <br>
+    <h6><a style="color: blueviolet;">Sugeridos</a></h6>
+    <a>
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+      &nbsp;
+      <img src="./img/perfil.png" width="50" height="40">
+
+      <br>
+      Felipe &nbsp; Rodolfo &nbsp; Dolores &nbsp; Eustaquio &nbsp; Luis
+    </a>
+
+  </div>
+
+
+</body>
+
+</html>
