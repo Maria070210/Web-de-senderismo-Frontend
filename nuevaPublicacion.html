@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación</title>
+    <link rel="stylesheet" href="./css/estilos_Cli.css">
+    <link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <style>
+        .custom-file-button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        .custom-file-button:hover {
+          background-color: #0056b3;
+        }
+      </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./inicioUser.html">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1LJTL3S3Ag5RE7mBqt48BbVSWJ7RHvHd7DmjKZ5gTJmsdnA2l"
+                     alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Senderismo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./perfil.html">
+                            <img src="./img/perfilPersona.png" alt="perfil" width="30" height="30"
+                                 class="d-inline-block align-text-top">
+                            Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./chat.html">
+                            <img src="./img/Chat.png" alt="perfil" width="30" height="30"
+                                 class="d-inline-block align-text-top">
+                            Chat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./configuracion.html">
+                            <img src="./img/Configuracion.png" alt="perfil" width="30" height="30"
+                                 class="d-inline-block align-text-top">
+                            Configuración
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./acceso.html" style="color: gray;">Log Out</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2" role="search">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                </form>
+                <form class="d-flex" role="search">
+                    <button class="btn" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container-wrapper container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="container-wrapper container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 col-md-12 mb-4">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="card-body text-center">
+                                            <h1>Nueva Publicación</h1>
+
+                                             <!-- Imagen principal -->
+                                            <div class="input-box">
+                                                <label><b>Imagen Principal:</b></label>
+                                                <input type="file" id="imagenPrincipalInput" accept="image/*" hidden>
+                                                <button class="custom-file-button" onclick="document.getElementById('imagenPrincipalInput').click();">
+                                                <img src="./img/carpeta.png" alt="carpeta" style="width:32px; height:32px;">
+                                                </button>
+                                                <span id="imagenPrincipalNombre">Ningún archivo seleccionado</span>
+                                            </div>
+
+                                            <!-- Imagen de la ruta (seguimiento) -->
+                                            <div class="input-box">
+                                                <label><b>Imagen de la ruta (seguimiento):</b></label>
+                                                <input type="file" id="imagenRutaInput" accept="image/*" hidden>
+                                                <button class="custom-file-button" onclick="document.getElementById('imagenRutaInput').click();">
+                                                <img src="./img/carpeta.png" alt="carpeta" style="width:32px; height:32px;">
+                                                </button>
+                                                <span id="imagenRutaNombre">Ningún archivo seleccionado</span>
+                                            </div>
+
+                                            <!-- Título de la ruta -->
+                                            <div class="input-box">
+                                                <p><b>Título de la ruta:</b>&nbsp;
+                                                    <input type="text" id="tituloInput" placeholder="Título">
+                                                </p>
+                                            </div>
+
+                                            <!-- Tipo de ruta (dropdown) -->
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <p class="mb-0"><b>Selecciona el tipo de ruta:</b></p>
+                                                <select class="form-select w-25" id="tipoRutaSelect"
+                                                        style="border-color: #6c757d; border-radius: 40px;">
+                                                    <option value="filtro" selected>Tipo de ruta</option>
+                                                    <option value="lago">Ruta de lagos</option>
+                                                    <option value="rocas">Ruta de rocas</option>
+                                                    <option value="nieve">Ruta de nieve</option>
+                                                    <option value="montaña">Ruta de montaña</option>
+                                                    <option value="bosque">Ruta de bosque</option>
+                                                </select>
+                                            </div>
+
+                                            <br>
+
+                                            <!-- URL de la ubicación de maps -->
+                                            <div class="input-box">
+                                                <p><b>URL de la ubicación de maps:</b>&nbsp;
+                                                    <input type="text" id="urlMapsInput" placeholder="Ej: https://maps.google...">
+                                                </p>
+                                            </div>
+
+                                            <!-- Mensaje de la publicación -->
+                                            <div class="input-box">
+                                                <p><b>Mensaje de la publicación:</b></p>
+                                                <textarea class="form-control w-75 mx-auto" id="mensajeInput" rows="4"
+                                                    placeholder="Escribe un mensaje para tu publicación"></textarea>
+                                            </div>
+                                            <br>
+
+                                            <!-- Carrusel de imágenes (hasta 6) -->
+                                            <div class="input-box">
+                                                <label><b>Imágenes de la ruta (carrusel) (máx. 6):</b></label>
+                                                <input type="file" id="carruselInput" accept="image/*" hidden multiple>
+                                                <button class="custom-file-button" onclick="document.getElementById('carruselInput').click();">
+                                                <img src="./img/carpeta.png" alt="carpeta" style="width:32px; height:32px;">
+                                                </button>
+                                                <span id="carruselNombre">Ningún archivo seleccionado</span>
+                                            </div>
+
+                                            <!-- Botones -->
+                                            <div class="btn2">
+                                                <button class="btn" type="button" onclick="location.href='./perfil.html';">Cancelar</button>
+                                                <button class="btn" type="button" onclick="añadirPublicacion()">Añadir publicación</button>
+                                            </div>
+
+                                        </div> <!-- card-body -->
+                                    </div> <!-- card -->
+                                </div> <!-- col -->
+                            </div> <!-- row -->
+                        </div> <!-- container-wrapper -->
+                    </div> <!-- card-body -->
+                </div> <!-- card -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/scripts_nueva_publicacion.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

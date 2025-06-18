@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Usuarios</title>
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <link href="./dependencias/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos2Adm.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Lateral con búsqueda y lista de usuarios -->
+            <div class="col-md-3 sidebar_usuarios">
+                <h4>Admin: Nombre</h4>
+                <div class="search-container_usuarios">
+                    <input type="search" id="buscarUsuarioInput" 
+                           placeholder="Buscar usuario" 
+                           class="form-control" 
+                           onkeyup="filtrarUsuarios()">
+                </div>
+                <div id="listaUsuarios" class="user-list_usuarios"></div>
+                <a class="btn btn-secondary w-100 mt-4" href="./administrador_main.html">Atrás</a>
+            </div>
+
+            <!-- Detalle del usuario -->
+            <div class="col-md-9 content_usuarios">
+                <div id="detallesUsuario" class="user-details_usuarios" style="display: none;">
+                    <div class="d-flex align-items-center mb-4">
+                        <img id="fotoPerfil" src="./img/Rutas.jpg" alt="Perfil" class="profile-picture_usuarios me-4">
+                        <div>
+                            <h2 id="nombreUsuario">cargando...</h2>
+                            <p id="correoUsuario">cargando...</p>
+                        </div>
+                    </div>
+                    <!-- Badge y botón único que cambia según estado -->
+                    <div class="mb-4">
+                        <span class="badge" id="estadoCuentaBadge">cargando...</span>
+                        <button class="btn ms-3" id="botonToggleBloqueo" onclick="toggleBloqueoUsuario()">
+                            Bloquear/Desbloquear
+                        </button>
+                    </div>
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs" id="userTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="info-tab" data-bs-toggle="tab"
+                                    data-bs-target="#infoTab" type="button" role="tab" aria-controls="infoTab" 
+                                    aria-selected="true">Información
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="posts-tab" data-bs-toggle="tab"
+                                    data-bs-target="#postsTab" type="button" role="tab" aria-controls="postsTab"
+                                    aria-selected="false">Publicaciones
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content tab-content_usuarios" id="userTabContent">
+                        <!-- Información -->
+                        <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
+                            <h5 class="mt-3">Información Personal</h5>
+                            <p><strong>Nombre:</strong> <span id="infoNombre">cargando...</span></p>
+                            <p><strong>Apellidos:</strong> <span id="infoApellidos">cargando...</span></p>
+                            <p><strong>Nombre Usuario:</strong> <span id="infoNombreUsuario">cargando...</span></p>
+                            <p><strong>Correo Electrónico:</strong> <span id="infoCorreo">cargando...</span></p>
+                            <p><strong>Género:</strong> <span id="infoGenero">cargando...</span></p>
+                        </div>
+                        <!-- Publicaciones (organizadas en columnas de 2 imágenes) -->
+                        <div class="tab-pane fade" id="postsTab" role="tabpanel" aria-labelledby="posts-tab">
+                            <h5 class="mt-3">Publicaciones</h5>
+                            <!-- Aquí las columnas se irán añadiendo en horizontal -->
+                            <ul class="scrollable-horizontal list-unstyled" id="listaPublicacionesUsuario">
+                                <!-- Se rellena desde JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vista por defecto si no se ha seleccionado usuario -->
+                <div id="sinUsuarioSeleccionado" class="text-center" style="margin-top: 50px;">
+                    <h2>Selecciona un usuario para ver los detalles</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dependencias/js/bootstrap.bundle.js"></script>
+    <script src="./js/scripts_admin_usuarios.js"></script>
+</body>
+</html>

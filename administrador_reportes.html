@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrar Reportes</title>
+  <link href="./dependencias/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/logo.ico">
+  <link rel="stylesheet" href="./css/estilos2Adm.css">
+</head>
+<body>
+  <!-- Quitar la clase "mensajes" por defecto -->
+  <div class="container-fluid report-status_reporte">
+    <div class="row">
+      <!-- Barra lateral -->
+      <div class="col-md-2 sidebar_reporte">
+        <h4>Admin: Nombre</h4>
+        <button class="btn btn-danger w-100 mb-2" onclick="mostrarReportes('mensajes', true)">Mensajes</button>
+        <button class="btn btn-warning w-100 mb-2" onclick="mostrarReportes('publicaciones', true)">Publicaciones</button>
+        <button class="btn btn-success w-100 mb-2" onclick="mostrarReportes('cerrados', true)">Cerrados</button>
+        <a class="btn btn-secondary w-100 mt-4" href="./administrador_main.html">Atrás</a>
+      </div>
+      
+      <!-- Contenido principal -->
+      <div class="col-md-10 content_reporte">
+        <!-- Vista de lista de reportes -->
+        <div id="reportsView">
+          <h4 id="reportTitle" class="my-4">Reportes de Mensajes</h4>
+          <div id="reportsList" class="list-group scrollable_reporte"></div>
+        </div>
+
+        <!-- Vista de detalle de reporte -->
+        <div id="selectedReportView" style="display: none;">
+          <div class="d-flex align-items-center mb-3">
+            <button class="btn btn-secondary me-3" onclick="cerrarVistaReporte()">Volver</button>
+            <h5 class="mb-0">Detalle del Reporte</h5>
+          </div>
+          <div class="details-container_reporte">
+            <div class="report-details_reporte">
+              <p><strong>ID Reporte:</strong> <span id="detailReportId"></span></p>
+              <p><strong>Título:</strong> <span id="detailReportTitle"></span></p>
+              <p><strong>Usuario Reportado:</strong> <span id="detailReportUser"></span></p>
+              <p><strong>Fecha:</strong> <span id="detailReportDate"></span></p>
+              
+              <div id="reportActions" class="mt-3">
+                <button class="btn btn-danger" id="btnSancionar" style="display: none;" onclick="sancionarReporte()">
+                  Sancionar
+                </button>
+              </div>
+              <div id="closedInfo" style="display: none;">
+                <p style="color: #888;">Este reporte se encuentra en Cerrados.</p>
+              </div>
+            </div>
+            <!-- Para Mensajes -->
+            <div class="post-details_reporte" id="mensajeDetails" style="display: none;">
+              <h5>Mensaje Reportado</h5>
+              <p><strong>Usuario del Mensaje:</strong> <span id="mensajeUser"></span></p>
+              <p><strong>Texto:</strong></p>
+              <p id="mensajeTexto" style="background-color:#fff; padding:10px; border:1px solid #dee2e6; border-radius:5px;"></p>
+            </div>
+            <!-- Para Publicaciones -->
+            <div class="post-details_reporte" id="publicacionDetails" style="display: none;">
+              <h5>Publicación Reportada</h5>
+              <p><strong>Nombre del Usuario:</strong> <span id="publicacionAutor"></span></p>
+              <p><strong>Título de la Publicación:</strong> <span id="publicacionTitulo"></span></p>
+              <p><strong>Mensaje de la Publicación:</strong></p>
+              <p id="publicacionMensaje" style="background-color:#fff; padding:10px; border:1px solid #dee2e6; border-radius:5px;"></p>
+              <p><strong>URL:</strong> <span id="publicacionUrl"></span></p>
+              <div id="carouselImages" class="carousel slide mt-3" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carouselInner"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Prev</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div> <!-- fin details-container_reporte -->
+        </div> <!-- fin selectedReportView -->
+      </div> <!-- fin col-md-10 -->
+    </div> <!-- fin row -->
+  </div> <!-- fin container-fluid -->
+
+  <script src="./dependencias/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/scripts_admin_reporte.js"></script>
+</body>
+</html>

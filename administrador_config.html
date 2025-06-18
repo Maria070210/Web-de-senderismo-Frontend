@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Opciones de Cuenta</title>
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./dependencias/css/bootstrap.min.css">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="./dependencias/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/estilos2Adm.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Título y saludo -->
+        <div class="text-center mb-5">
+            <h1 class="display-5">Bienvenido, Admin Nombre</h1>
+            <p class="lead">Gestiona tu cuenta y preferencias desde aquí.</p>
+        </div>
+
+        <!-- Información de la cuenta -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Detalles de la Cuenta</h5>
+            </div>
+            <div class="card-body">
+                <p><i class="bi bi-calendar-event"></i> <strong>Fecha de creación:</strong> 15 de marzo de 2020</p>
+                <p><i class="bi bi-shield-lock"></i> <strong>Nivel de privilegios:</strong> Administrador completo</p>
+                <p><i class="bi bi-envelope"></i> <strong>Correo electrónico:</strong> admin@ejemplo.com</p>
+            </div>
+        </div>
+
+        <!-- Opciones de Cuenta -->
+        <div class="section-title">
+            <h4>Opciones de Cuenta</h4>
+        </div>
+        <div class="accordion mb-4" id="accountOptions">
+            <!-- Cambiar Contraseña -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPassword">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePassword" aria-expanded="true" aria-controls="collapsePassword">
+                        <i class="bi bi-key-fill me-2"></i>Cambiar Contraseña
+                    </button>
+                </h2>
+                <div id="collapsePassword" class="accordion-collapse collapse" aria-labelledby="headingPassword" data-bs-parent="#accountOptions">
+                    <div class="accordion-body">
+                        <form onsubmit="enviarCambioContrasena(event)">
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            <div id="passwordError" class="text-danger" style="display: none;">Las contraseñas no coinciden.</div>
+                            <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Actualizar Perfil -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingProfile">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile">
+                        <i class="bi bi-person-fill me-2"></i>Actualizar Información de Perfil
+                    </button>
+                </h2>
+                <div id="collapseProfile" class="accordion-collapse collapse" aria-labelledby="headingProfile" data-bs-parent="#accountOptions">
+                    <div class="accordion-body">
+                        <form onsubmit="actualizarPerfil(event)">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="fullName" value="Admin Nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" value="admin@ejemplo.com" required>
+                            </div>
+                            <button type="submit" class="btn btn-info">Actualizar Perfil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Borrar Cuenta -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDelete">
+                    <button class="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelete" aria-expanded="false" aria-controls="collapseDelete">
+                        <i class="bi bi-trash-fill me-2"></i>Borrar Cuenta
+                    </button>
+                </h2>
+                <div id="collapseDelete" class="accordion-collapse collapse" aria-labelledby="headingDelete" data-bs-parent="#accountOptions">
+                    <div class="accordion-body">
+                        <p class="text-danger">Esta acción es irreversible. Todos tus datos serán eliminados permanentemente.</p>
+                        <button class="btn btn-danger" onclick="borrarCuenta()">Confirmar Borrado de Cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de regreso -->
+        <div class="text-center">
+            <a class="btn btn-secondary" href="./administrador_main.html">
+                <i class="bi bi-arrow-left"></i> Volver al Panel Principal
+            </a>
+        </div>
+    </div>
+
+    <script src="./dependencias/js/bootstrap.bundle.js"></script>
+    <script src="./js/scripts_admin_config.js"></script>
+</body>
+</html>

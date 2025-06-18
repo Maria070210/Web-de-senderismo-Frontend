@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/estilos_Cli.css">
+    <link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">
+    <link rel="shortcut icon" href="./img/logo.ico">
+</head>
+
+<body>
+    <!--Como sabemos de la teoría el nav es parte del body asi que lo opngo aqui debajo un poco destacado al inicio-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./inicioUser.html">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1LJTL3S3Ag5RE7mBqt48BbVSWJ7RHvHd7DmjKZ5gTJmsdnA2l"
+                    alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Senderismo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./perfil.html">
+                            <img src="./img/perfilPersona.png" alt="perfil" width="30" height="30"
+                                class="d-inline-block align-text-top">
+                            Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./chat.html">
+                            <img src="./img/Chat.png" alt="perfil" width="30" height="30"
+                                class="d-inline-block align-text-top">
+                            Chat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./configuracion.html">
+                            <img src="./img/Configuracion.png" alt="perfil" width="30" height="30"
+                                class="d-inline-block align-text-top">
+                            Configuraci&oacute;n
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./acceso.html" style="color: gray;">Log
+                            Out</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                </form>
+                <form class="d-flex" role="search">
+                    <button class="btn" type="submit"> Buscar </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+<!--Contenido fuera del nav, wrappers-->
+<!--Parte de contenido de inicio-->
+    <div class="container-wrapper container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 mb-4 order-1 order-md-1">
+                <div class="card h-100 shadow-sm" style="border-color: transparent;">
+                    <div class="card-body">
+                        <!-- Dropdown filter -->
+                        <select class="form-select mb-3" aria-label="Filtro de rutas" id="filtro-publi" onchange="filtrarTipo()">
+                            <option value="filtro" selected>Filtro de publicaciones</option>
+                            <option value="lago">Rutas de lagos</option>
+                            <option value="rocas">Rutas de rocas</option>
+                            <option value="nieve">Rutas de nieve</option>
+                            <option value="montaña">Rutas de montaña</option>
+                            <option value="bosque">Rutas de bosque</option>
+                        </select>
+                        <!-- Image -->
+                        <div class="row row-cols-3 row-cols-md-3 g-3" id="publicaciones">
+                                <img type="button" src="./img/Mosaico/1.png" class="img-fluid" id="imagen-inicio1" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/2.png" class="img-fluid" id="imagen-inicio2" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/3.png" class="img-fluid" id="imagen-inicio3" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/4.png" class="img-fluid" id="imagen-inicio4" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/5.png" class="img-fluid" id="imagen-inicio5" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/6.png" class="img-fluid" id="imagen-inicio6" alt=" " onclick="location.href='./rutaPubli.html';">  
+                                <img type="button" src="./img/Mosaico/7.png" class="img-fluid" id="imagen-inicio7" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/8.png" class="img-fluid" id="imagen-inicio8" alt=" " onclick="location.href='./rutaPubli.html';"> 
+                                <img type="button" src="./img/Mosaico/9.png" class="img-fluid" id="imagen-inicio9" alt=" " onclick="location.href='./rutaPubli.html';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Parte de perfiles-->
+            <div class="col-lg-4 col-md-12 mb-4 order-2 order-md-2">
+                <div class="card h-100 shadow-sm" style="border-color: transparent;">
+                    <div class="card-body">
+                            <h4><b>Perfiles</b></h4>
+                            <h6><a style="color: blueviolet;" id="seguidos">Seguidos</a></h6>
+                            <div class="profile-list">
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfilPersona2.png" alt="perfil" width="50" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Ricardit0_69</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>JulioPerales</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Josefa</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Maur1cio</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Angustas_p4Tos</span>
+                                </div>
+                            </div>
+                            <br>
+                            <h6><a style="color: blueviolet;" id="sugeridos">Sugeridos</a></h6>
+                            <div class="profile-list">
+                                <div class="profile-item">
+                                    <img src="./img/perfilPersona3.png" width="50" height="50" alt=" ">
+                                    <span>Filipa</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Rodolfo</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Dolores</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>Eustaquio</span>
+                                </div>
+                                <div class="profile-item">
+                                    <img type="button" src="./img/perfil.png" alt="perfil" width="60" height="50" 
+                                            onclick="location.href='./perfilOtro.html';">
+                                    <span>eL_m0Zo</span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/scripts_inicioUser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts_cli_inicio.js"></script>
+    <script src="js/scripts_cli_otros_usuarios.js"></script>
+</body>
+
+</html>

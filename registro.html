@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="./css/estilosacceso.css">
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <link rel="stylesheet" href="./dependencias/css/bootstrap.rtl.css">
+</head>
+
+<body>
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center w-100">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <div class="bodyIni">
+                   <img src="./img/Imagen.jpg" alt="Collage de imagen" class="img-fluid" style="width: 100%; max-width: 600px; height: auto; object-fit: contain; margin-left: auto;">
+                </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <div class="wrapper" style="margin-top: 95px;">
+                    <form>
+                        <h1 class="text-center mb-4">Registro de usuario</h1>
+                        <div class="logo-wrapper">
+                            <img src="https://img.freepik.com/vector-gratis/hombre-practicando-turismo-ecologico_23-2148636526.jpg?t=st=1729083435~exp=1729087035~hmac=d76fc5f88189851b29b6779c3b384d94b175549fde76e10c02035ea6cffc3bb7&w=740"
+                                alt="Logo Senderismo">
+                            <p>Senderismo</p>
+                        </div>
+                        <div class="input-box">
+                            <p>Nombre: <input type="text" placeholder="&nbsp;Nombre"></p>
+                        </div>
+
+                        <div class="input-box">
+                            <p>Apellidos: <input type="text" placeholder="&nbsp;Apellidos"></p>
+                        </div>
+
+                        <label>Género</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="generos1" name="generos" value="mujer">
+                            <label for="generos1">Mujer</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="generos2" name="generos" value="hombre">
+                            <label for="generos2">Hombre</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="generos3" name="generos" value="otro">
+                            <label for="generos3">Otro</label>
+                        </div>
+
+                        <div class="input-box">
+                            <p>Elije un nombre de usuario: <input type="text" placeholder="&nbsp;Nombre de usuario"></p>
+                        </div>
+
+                        <div class="input-box">
+                            <p>Correo electrónico: <input type="text" placeholder="&nbsp;Correo"></p>
+                        </div>
+
+                        <div class="input-box">
+                            <p>Contraseña: <input type="password" placeholder="&nbsp;Contraseña" required></p>
+                        </div>
+                        <div class="btn2">
+                            <button type="button" onclick="window.location.href='./acceso.html'">Volver</button>
+                            <button type="submit">Registrar datos</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/scripts_registro.js"></script>
+</body>
+
+</html>

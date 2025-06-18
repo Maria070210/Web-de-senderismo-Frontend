@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil Administrador</title>
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <link href="./dependencias/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos2Adm.css">
+    <style>
+      /* Ajustamos la altura de las imágenes para que se vean más pequeñas */
+      .card-img-top {
+        max-height: 150px;
+        object-fit: cover;
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-2 sidebar">
+                <h4>Admin: Nombre</h4>
+                
+                <!-- Botón de Usuarios -->
+                <button class="btn btn-primary w-100 mb-2" onclick="location.href='./administrador_usuarios.html'">
+                    Usuarios
+                </button>
+
+                <!-- Menú desplegable de Reportes -->
+                <button class="btn btn-primary w-100 mb-1" data-bs-toggle="collapse" data-bs-target="#reportesSubMenu" aria-expanded="false" aria-controls="reportesSubMenu">
+                    Reportes
+                </button>
+                <div class="collapse" id="reportesSubMenu">
+                    <button class="btn btn-danger w-100 mt-1 mb-1" 
+                            onclick="location.href='./administrador_reportes.html?status=mensajes'">
+                        Mensajes
+                    </button>
+                    <button class="btn btn-warning w-100 mt-1 mb-1" 
+                            onclick="location.href='./administrador_reportes.html?status=publicaciones'">
+                        Publicaciones
+                    </button>
+                    <button class="btn btn-success w-100 mt-1 mb-3" 
+                            onclick="location.href='./administrador_reportes.html?status=cerrados'">
+                        Cerrados
+                    </button>
+                </div>
+
+                <!-- Configuración -->
+                <button class="btn btn-primary w-100 mt-2" onclick="location.href='./administrador_config.html'">
+                    Configuración
+                </button>
+
+                <!-- Cerrar Sesión -->
+                <a class="btn btn-secondary w-100 mt-4" href="./acceso.html">
+                    Cerrar Sesión
+                </a>
+            </div>
+
+            <!-- Grid de 12 publicaciones (6x2) -->
+            <div class="col-md-10 pt-4">
+                <!-- Encabezado y botón a su lado -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Publicaciones</h4>
+                    <button class="btn btn-outline-primary" onclick="cargarPublicacionesAleatorias()">
+                        Recargar Publicaciones
+                    </button>
+                </div>
+                <!-- Grid con 6 columnas (en pantallas md en adelante) y 2 filas = 12 items -->
+                <div class="row row-cols-2 row-cols-md-6 g-4" id="gridPublicaciones">
+                    <!-- Se llena desde scripts_admin_main.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dependencias/js/bootstrap.bundle.js"></script>
+    <script src="./js/scripts_admin_main.js"></script>
+</body>
+</html>
